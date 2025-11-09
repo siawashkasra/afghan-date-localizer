@@ -1,213 +1,178 @@
 # Installation Guide
 
-## For Chrome, Edge, and Brave
+## Prerequisites
 
-### Step-by-Step Installation
+- **Node.js** 14 or higher (download from https://nodejs.org/)
+- **npm** (comes with Node.js)
 
-1. **Open Extensions Page**
-   - Chrome: Go to `chrome://extensions/`
-   - Edge: Go to `edge://extensions/`
-   - Brave: Go to `brave://extensions/`
+## Installation Steps
 
-2. **Enable Developer Mode**
-   - Look for a toggle switch in the top-right corner
-   - Turn ON "Developer mode"
+### 1. Install Dependencies
 
-3. **Load the Extension**
-   - Click the **"Load unpacked"** button
-   - Navigate to your extension folder
-   - Select the folder (not a specific file)
-   - Click "Select Folder" or "Open"
+```bash
+npm install
+```
 
-4. **Verify Installation**
-   - You should see "Afghan Date Converter" in your extensions list
-   - The extension icon should appear in your toolbar
-   - Status should show "Enabled"
+This installs:
+- chrono-node (natural language date parser)
+- jalaali-js (Jalali calendar conversion)
+- webpack (bundler)
 
-5. **Test It**
-   - Open `test.html` in your browser
-   - Dates should be converted automatically
-   - Press F12 to see console logs
+### 2. Build the Extension
 
----
+```bash
+npm run build
+```
 
-## For Firefox
+Or use the build script:
+```bash
+./build.sh
+```
 
-### Method 1: Temporary Installation (Recommended for Testing)
+This creates the `dist/` folder with the bundled extension.
 
-1. **Open Debugging Page**
-   - Type `about:debugging` in the address bar
-   - Press Enter
+### 3. Load in Browser
 
-2. **Load Temporary Add-on**
-   - Click **"This Firefox"** in the left sidebar
-   - Click **"Load Temporary Add-on..."** button
-   - Navigate to your extension folder
-   - Select the `manifest.json` file
-   - Click "Open"
+#### Chrome, Edge, or Brave
 
-3. **Verify Installation**
-   - The extension should appear in the list
-   - Check for any error messages
+1. Open your browser
+2. Go to extensions page:
+   - Chrome: `chrome://extensions/`
+   - Edge: `edge://extensions/`
+   - Brave: `brave://extensions/`
+3. Enable **"Developer mode"** (toggle in top-right)
+4. Click **"Load unpacked"**
+5. Select the `dist/` folder
+6. Done!
 
-4. **Test It**
-   - Open `test.html` in Firefox
-   - Dates should be converted
-   - Press Ctrl+Shift+J to see console logs
+#### Firefox
 
-**Note:** Temporary add-ons are removed when Firefox closes.
+1. Open Firefox
+2. Go to `about:debugging`
+3. Click **"This Firefox"** in the left sidebar
+4. Click **"Load Temporary Add-on..."**
+5. Navigate to the `dist/` folder
+6. Select `manifest.json`
+7. Done!
 
-### Method 2: Permanent Installation (Advanced)
+**Note:** In Firefox, temporary add-ons are removed when you close the browser.
 
-1. **Prepare the Extension**
-   - Zip all extension files
-   - Rename from `.zip` to `.xpi`
-
-2. **Disable Signature Requirement**
-   - Type `about:config` in address bar
-   - Search for `xpinstall.signatures.required`
-   - Set to `false`
-
-3. **Install**
-   - Drag and drop the `.xpi` file into Firefox
-   - Click "Add" when prompted
-
----
-
-## Testing the Extension
-
-### Quick Test
+## Verify Installation
 
 1. Open `test.html` in your browser
-2. You should see dates converted to Afghan format
-3. Examples:
-   - `2024-11-09` → `۱۸ عقرب ۱۴۰۳` (Dari)
-   - `November 9, 2024` → `18 لړم 1403` (Pashto)
-
-### Check Console Logs
-
-1. Press F12 (or Ctrl+Shift+J in Firefox)
-2. Go to the Console tab
-3. Look for messages like:
+2. Dates should be converted automatically
+3. Press **F12** to open Developer Console
+4. Look for messages like:
    ```
-   Afghan Date Converter: Starting...
+   Afghan Date Converter: Starting with libraries...
    Converting dates with language: dari
-   Converted: 2024-11-09 → ۱۸ عقرب ۱۴۰۳
-   Conversion complete. Processed X text nodes.
+   Converted: November 9, 2024 → ۱۸ عقرب ۱۴۰۳
    ```
 
-### Test on Real Websites
+## Configure Settings
 
-Try these sites with dates:
+1. Click the extension icon in your toolbar
+2. Select your preferred language:
+   - **Dari (دری)** - Uses Dari month names
+   - **Pashto (پښتو)** - Uses Pashto month names
+3. Click **"Save Settings"**
+4. Reload any page to see changes
+
+## Test on Real Websites
+
+Try these websites with dates:
 - https://www.bbc.com/news
 - https://en.wikipedia.org/wiki/2024
 - https://www.google.com/search?q=today+date
 
----
-
-## Configuring the Extension
-
-### Change Language Settings
-
-1. **Open Settings**
-   - Click the extension icon in your toolbar
-   - Or go to extensions page and click "Details" → "Extension options"
-
-2. **Select Language**
-   - Choose **Dari (دری)** or **Pashto (پښتو)**
-
-3. **Toggle Persian Digits** (Dari only)
-   - Check the box to use ۱۲۳ instead of 123
-   - Uncheck to use standard digits
-
-4. **Save**
-   - Click "Save Settings"
-   - Reload any page to see changes
-
----
-
 ## Troubleshooting
 
-### Extension Not Loading
+### "npm: command not found"
 
-**Chrome/Edge/Brave:**
-- Make sure Developer mode is enabled
-- Check for error messages in red
-- Try reloading the extension (click refresh icon)
+**Solution:** Install Node.js from https://nodejs.org/
 
-**Firefox:**
-- Make sure you selected `manifest.json`
-- Check `about:debugging` for errors
-- Try loading again
+Choose the LTS (Long Term Support) version.
+
+### Build Fails
+
+**Solution:**
+```bash
+rm -rf node_modules package-lock.json
+npm install
+npm run build
+```
+
+### Extension Doesn't Load
+
+**Possible causes:**
+1. Loading wrong folder (must be `dist/`, not root)
+2. Developer mode not enabled
+3. Build didn't complete successfully
+
+**Solution:**
+- Make sure you're loading the `dist/` folder
+- Check that `dist/contentScript.js` exists
+- Enable Developer mode in browser
+- Try rebuilding: `npm run build`
 
 ### Dates Not Converting
 
-1. **Check if extension is enabled**
-   - Go to extensions page
-   - Make sure it's turned ON
+**Check:**
+1. Extension is enabled in browser
+2. Dates are after year 2000
+3. Page has been reloaded after installing
+4. Console (F12) for error messages
 
-2. **Verify date format**
-   - Only dates after year 2000 are converted
-   - Check supported formats in README.md
-
-3. **Check console**
-   - Press F12
-   - Look for error messages
-   - Verify "Afghan Date Converter: Starting..." appears
-
-4. **Reload the page**
-   - Press Ctrl+R or Cmd+R
-   - Extension runs on page load
-
-### Settings Not Saving
-
-1. **Check storage permissions**
-   - Extension should have "storage" permission
-   - Reinstall if needed
-
-2. **Try again**
-   - Click Save Settings
-   - Wait for confirmation message
-   - Reload a test page
+**Solution:**
+- Reload the page (Ctrl+R or Cmd+R)
+- Check browser console for errors
+- Verify extension is enabled
+- Try reinstalling
 
 ### Extension Icon Not Showing
 
 **Chrome/Edge/Brave:**
-- Click the puzzle icon in toolbar
-- Pin "Afghan Date Converter"
+- Click the puzzle icon (🧩) in toolbar
+- Find "Afghan Date Converter"
+- Click the pin icon to pin it
 
 **Firefox:**
 - Right-click toolbar
 - Select "Customize Toolbar"
 - Drag extension icon to toolbar
 
----
-
 ## Updating the Extension
 
-### Chrome/Edge/Brave
+After making changes to source files:
 
-1. Make changes to extension files
-2. Go to `chrome://extensions/`
-3. Click the refresh icon on the extension card
-4. Reload any open pages
+1. Rebuild:
+   ```bash
+   npm run build
+   ```
 
-### Firefox
+2. Reload extension in browser:
+   - **Chrome/Edge/Brave:** Go to extensions page, click refresh icon
+   - **Firefox:** Go to `about:debugging`, click "Reload"
 
-1. Make changes to extension files
-2. Go to `about:debugging`
-3. Click "Reload" next to the extension
-4. Reload any open pages
+3. Reload any open pages
 
----
+## Development Mode
+
+For development with auto-rebuild:
+
+```bash
+npm run dev
+```
+
+This watches for file changes and rebuilds automatically.
 
 ## Uninstalling
 
 ### Chrome/Edge/Brave
 
-1. Go to `chrome://extensions/`
+1. Go to extensions page
 2. Find "Afghan Date Converter"
-3. Click "Remove"
+3. Click **"Remove"**
 4. Confirm removal
 
 ### Firefox
@@ -215,46 +180,30 @@ Try these sites with dates:
 1. Go to `about:addons`
 2. Find "Afghan Date Converter"
 3. Click the three dots (...)
-4. Click "Remove"
+4. Click **"Remove"**
 5. Confirm removal
 
----
+## Browser Compatibility
 
-## Advanced: Publishing the Extension
+- ✅ **Chrome** (Version 88+)
+- ✅ **Microsoft Edge** (Version 88+)
+- ✅ **Brave Browser** (Version 1.20+)
+- ✅ **Mozilla Firefox** (Version 109+)
+- ✅ Any Chromium-based browser
 
-### Chrome Web Store
+## File Structure
 
-1. Create a developer account ($5 fee)
-2. Zip the extension files
-3. Upload to Chrome Web Store
-4. Fill in details and submit for review
+After building, your `dist/` folder should contain:
 
-### Firefox Add-ons
-
-1. Create an account at addons.mozilla.org
-2. Zip the extension files
-3. Submit for review
-4. Wait for approval (can take a few days)
-
----
-
-## Need More Help?
-
-- Check the browser console for errors (F12)
-- Read README.md for feature documentation
-- Read HOW_IT_WORKS.md for technical details
-- Open `test.html` to verify functionality
-
----
-
-## System Requirements
-
-- **Chrome:** Version 88 or higher
-- **Edge:** Version 88 or higher
-- **Brave:** Version 1.20 or higher
-- **Firefox:** Version 109 or higher (for Manifest V3 support)
-
----
+```
+dist/
+├── contentScript.js    # Bundled script with libraries
+├── manifest.json       # Extension manifest
+├── popup.html          # Settings popup
+├── popup.js            # Settings logic
+└── icons/              # Extension icons
+    └── icon-48.png
+```
 
 ## Privacy & Permissions
 
@@ -267,3 +216,10 @@ The extension:
 - ✅ Does not collect any data
 - ✅ Does not send data to servers
 - ✅ Only modifies text locally in your browser
+
+## Need More Help?
+
+- Read **README.md** for feature documentation
+- Read **BUILD.md** for detailed build instructions
+- Check browser console (F12) for error messages
+- Open **test.html** to verify functionality

@@ -4,15 +4,15 @@
 
 🚀 INSTALL IN 3 STEPS:
 
-FOR CHROME/EDGE/BRAVE:
-1. Go to: chrome://extensions/
-2. Enable "Developer mode" (top-right toggle)
-3. Click "Load unpacked" → Select extension folder
+1. Install Node.js from https://nodejs.org/
 
-FOR FIREFOX:
-1. Go to: about:debugging
-2. Click "This Firefox" → "Load Temporary Add-on"
-3. Select manifest.json
+2. Build:
+   npm install
+   npm run build
+
+3. Load in browser:
+   Chrome: chrome://extensions/ → Load unpacked → dist/
+   Firefox: about:debugging → Load Temporary Add-on → dist/manifest.json
 
 ✅ DONE! The extension is now active.
 
@@ -20,7 +20,7 @@ FOR FIREFOX:
 
 📝 TEST IT:
 
-1. Open test.html in Firefox
+1. Open test.html in your browser
 2. You should see dates converted to Afghan format
 3. Press F12 to see console logs
 
@@ -30,17 +30,18 @@ FOR FIREFOX:
 
 1. Click the extension icon in toolbar
 2. Choose Dari or Pashto
-3. Toggle Persian digits (۱۲۳)
-4. Click Save
-5. Reload any page
+3. Click Save
+4. Reload any page
 
 ═══════════════════════════════════════════════════════════
 
 📋 WHAT IT DOES:
 
 ✓ Converts dates after year 2000
+✓ Parses 100+ date formats
+✓ Natural language ("tomorrow", "next Friday")
+✓ Relative dates ("in 3 days")
 ✓ Works on all websites
-✓ Supports multiple date formats
 ✓ No internet required
 ✓ No data collection
 
@@ -48,32 +49,43 @@ FOR FIREFOX:
 
 🔍 EXAMPLES:
 
+Format: Year, Month Day (e.g., ۱۸ عقرب ۱۴۰۳)
+
 Input:  November 9, 2024
 Output: ۱۸ عقرب ۱۴۰۳ (Dari)
-Output: 18 لړم 1403 (Pashto)
+Output: ۱۸ لړم ۱۴۰۳ (Pashto)
 
-Input:  2024-05-15
-Output: ۲۶ ثور ۱۴۰۳ (Dari)
-Output: 26 غویی 1403 (Pashto)
+Input:  tomorrow
+Output: ۱۹ عقرب ۱۴۰۳
+
+Input:  next Friday
+Output: ۲۲ عقرب ۱۴۰۳
+
+Input:  Nov 8
+Output: ۱۷ عقرب
 
 ═══════════════════════════════════════════════════════════
 
 ❓ TROUBLESHOOTING:
 
-Problem: Extension not working
-Solution: Check about:addons - make sure it's enabled
+Problem: npm command not found
+Solution: Install Node.js from https://nodejs.org/
+
+Problem: Build fails
+Solution: rm -rf node_modules && npm install && npm run build
+
+Problem: Extension doesn't load
+Solution: Make sure you're loading the dist/ folder
 
 Problem: Dates not converting
-Solution: Make sure dates are after year 2000
-
-Problem: Console shows errors
-Solution: Reinstall the extension
+Solution: Check console (F12) for errors
 
 ═══════════════════════════════════════════════════════════
 
 📚 MORE INFO:
 
 - Read README.md for detailed documentation
+- Read BUILD.md for build instructions
 - Read INSTALL.md for installation options
 - Open test.html to test all date formats
 

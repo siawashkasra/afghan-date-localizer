@@ -7,21 +7,21 @@
 👋 Welcome! This extension converts dates after year 2000 to 
    Afghan Dari or Pashto Solar Hijri calendar.
 
+✅ ALREADY BUILT - READY TO USE!
+   The dist/ folder contains the ready-to-install extension.
+   No npm or build commands needed!
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🚀 QUICK INSTALL
+🚀 INSTALL IN 2 STEPS
 
   FOR CHROME/EDGE/BRAVE:
-  1. Open chrome://extensions/
-  2. Enable "Developer mode"
-  3. Click "Load unpacked"
-  4. Select this folder
+  1. Go to: chrome://extensions/
+  2. Enable "Developer mode" → Click "Load unpacked" → Select dist/ folder
   
   FOR FIREFOX:
-  1. Open about:debugging
-  2. Click "This Firefox"
-  3. Click "Load Temporary Add-on"
-  4. Select manifest.json
+  1. Go to: about:debugging → Click "This Firefox"
+  2. Click "Load Temporary Add-on" → Select dist/manifest.json
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -34,20 +34,30 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+✨ FEATURES
+
+  ✓ Parses 100+ date formats automatically
+  ✓ Natural language ("tomorrow", "next Friday")
+  ✓ Relative dates ("in 3 days", "2 weeks ago")
+  ✓ Short dates (Nov 8)
+  ✓ Day names (Sunday, November 9, 2025)
+  ✓ Persian digits for both Dari and Pashto
+  ✓ Works on all websites
+  ✓ No data collection
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 📖 DOCUMENTATION
 
-  QUICKSTART.txt          → Quick reference guide
-  CHROME_INSTALL.md       → Chrome installation (detailed)
-  INSTALL.md              → All browsers installation
+  READY_TO_USE.md         → Quick install guide (start here!)
   README.md               → Full documentation
-  HOW_IT_WORKS.md         → Technical details
-  BROWSER_COMPATIBILITY.md → Browser support info
+  test.html               → Test page
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🧪 TEST IT
 
-  1. Install the extension (see above)
+  1. Load the extension (see above)
   2. Open test.html in your browser
   3. Dates should convert automatically
   4. Press F12 to see console logs
@@ -58,41 +68,37 @@
 
   1. Click the extension icon
   2. Choose Dari (دری) or Pashto (پښتو)
-  3. Toggle Persian digits (۱۲۳)
-  4. Click Save
-  5. Reload any page
+  3. Click Save
+  4. Reload any page
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📋 EXAMPLES
 
+  Format: Year, Month Day (e.g., ۱۸ عقرب ۱۴۰۳)
+
   Input:  November 9, 2024
   Output: ۱۸ عقرب ۱۴۰۳ (Dari)
-  Output: 18 لړم 1403 (Pashto)
+  Output: ۱۸ لړم ۱۴۰۳ (Pashto)
 
-  Input:  2024-05-15
-  Output: ۲۶ ثور ۱۴۰۳ (Dari)
-  Output: 26 غویی 1403 (Pashto)
+  Input:  tomorrow
+  Output: ۱۹ عقرب ۱۴۰۳
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Input:  next Friday
+  Output: ۲۲ عقرب ۱۴۰۳
 
-✨ FEATURES
+  Input:  in 3 days
+  Output: ۲۱ عقرب ۱۴۰۳
 
-  ✓ Converts dates after year 2000
-  ✓ Multiple date formats supported
-  ✓ Works on all websites
-  ✓ Dari and Pashto languages
-  ✓ Persian digits option
-  ✓ No internet required
-  ✓ No data collection
-  ✓ Open source
+  Input:  Nov 8
+  Output: ۱۷ عقرب
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ❓ NEED HELP?
 
-  • Read CHROME_INSTALL.md for Chrome
-  • Read INSTALL.md for all browsers
+  • Read READY_TO_USE.md for quick install
+  • Make sure you load the dist/ folder (not root!)
   • Check console (F12) for errors
   • Open test.html to verify it works
 
@@ -100,12 +106,21 @@
 
 🎯 NEXT STEPS
 
-  1. Install the extension (see Quick Install above)
-  2. Open test.html to verify it works
+  1. Load dist/ folder in your browser (see Install above)
+  2. Open test.html to verify
   3. Configure your preferred language
   4. Browse the web - dates convert automatically!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-That's it! Enjoy using Afghan Date Converter! 🎉
+💡 FOR DEVELOPERS
+
+  If you want to modify the extension:
+  - Source code is in src/ folder
+  - Run: npm install && npm run build
+  - See BUILD.md for details
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+That's it! Just load dist/ folder and enjoy! 🎉
 

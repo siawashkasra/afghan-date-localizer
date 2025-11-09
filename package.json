@@ -1,0 +1,19 @@
+{
+  "name": "afghan-date-converter",
+  "version": "1.1.0",
+  "description": "Browser extension to convert dates to Afghan Dari/Pashto",
+  "scripts": {
+    "build": "webpack --mode production && npm run copy",
+    "copy": "mkdir -p dist && cp manifest.json popup.html popup.js dist/ && cp -r icons dist/ 2>/dev/null || true",
+    "dev": "webpack --mode development --watch",
+    "clean": "rm -rf dist node_modules"
+  },
+  "dependencies": {
+    "chrono-node": "^2.7.5",
+    "jalaali-js": "^1.2.7"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

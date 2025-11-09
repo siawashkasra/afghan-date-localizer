@@ -17,8 +17,10 @@
       display: block;
       margin: 15px 0;
     }
-    select, input {
+    select {
       margin-left: 10px;
+      padding: 5px;
+      width: 200px;
     }
     button {
       background: #0066cc;
@@ -28,6 +30,7 @@
       cursor: pointer;
       border-radius: 4px;
       margin-top: 10px;
+      width: 100%;
     }
     button:hover {
       background: #0052a3;
@@ -36,6 +39,15 @@
       color: green;
       margin-top: 10px;
       display: none;
+      text-align: center;
+    }
+    .note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 15px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -50,13 +62,12 @@
     </select>
   </label>
   
-  <label>
-    <input type="checkbox" id="usePersianDigits" checked>
-    Use Persian digits for Dari (۱۲۳)
-  </label>
-  
   <button id="save">Save Settings</button>
   <div class="status" id="status">Settings saved! Reload pages to see changes.</div>
+  
+  <div class="note">
+    <strong>Note:</strong> Both Dari and Pashto use Persian digits (۱۲۳) for dates.
+  </div>
   
   <script src="popup.js"></script>
 </body>
