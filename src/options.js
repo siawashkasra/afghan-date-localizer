@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   chrome.storage.sync.get(
     {
-      language: "da-AF",
+      language: "fa-AF",
       convertTimeElements: true,
       usePersianDigits: true,
     },
     (prefs) => {
-      langEl.value = prefs.language || "da-AF";
+      langEl.value = prefs.language || "fa-AF";
       convertTimeEl.checked = prefs.convertTimeElements !== false;
       usePersianDigitsEl.checked = prefs.usePersianDigits !== false;
     }
