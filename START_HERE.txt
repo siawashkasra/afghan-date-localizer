@@ -1,0 +1,111 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║           AFGHAN DATE CONVERTER - START HERE                  ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+👋 Welcome! This extension converts dates after year 2000 to 
+   Afghan Dari or Pashto Solar Hijri calendar.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 QUICK INSTALL
+
+  FOR CHROME/EDGE/BRAVE:
+  1. Open chrome://extensions/
+  2. Enable "Developer mode"
+  3. Click "Load unpacked"
+  4. Select this folder
+  
+  FOR FIREFOX:
+  1. Open about:debugging
+  2. Click "This Firefox"
+  3. Click "Load Temporary Add-on"
+  4. Select manifest.json
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ WORKS ON:
+   • Google Chrome
+   • Microsoft Edge
+   • Brave Browser
+   • Mozilla Firefox
+   • Any Chromium-based browser
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 DOCUMENTATION
+
+  QUICKSTART.txt          → Quick reference guide
+  CHROME_INSTALL.md       → Chrome installation (detailed)
+  INSTALL.md              → All browsers installation
+  README.md               → Full documentation
+  HOW_IT_WORKS.md         → Technical details
+  BROWSER_COMPATIBILITY.md → Browser support info
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TEST IT
+
+  1. Install the extension (see above)
+  2. Open test.html in your browser
+  3. Dates should convert automatically
+  4. Press F12 to see console logs
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️ SETTINGS
+
+  1. Click the extension icon
+  2. Choose Dari (دری) or Pashto (پښتو)
+  3. Toggle Persian digits (۱۲۳)
+  4. Click Save
+  5. Reload any page
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 EXAMPLES
+
+  Input:  November 9, 2024
+  Output: ۱۸ عقرب ۱۴۰۳ (Dari)
+  Output: 18 لړم 1403 (Pashto)
+
+  Input:  2024-05-15
+  Output: ۲۶ ثور ۱۴۰۳ (Dari)
+  Output: 26 غویی 1403 (Pashto)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ FEATURES
+
+  ✓ Converts dates after year 2000
+  ✓ Multiple date formats supported
+  ✓ Works on all websites
+  ✓ Dari and Pashto languages
+  ✓ Persian digits option
+  ✓ No internet required
+  ✓ No data collection
+  ✓ Open source
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ NEED HELP?
+
+  • Read CHROME_INSTALL.md for Chrome
+  • Read INSTALL.md for all browsers
+  • Check console (F12) for errors
+  • Open test.html to verify it works
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 NEXT STEPS
+
+  1. Install the extension (see Quick Install above)
+  2. Open test.html to verify it works
+  3. Configure your preferred language
+  4. Browse the web - dates convert automatically!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+That's it! Enjoy using Afghan Date Converter! 🎉
+

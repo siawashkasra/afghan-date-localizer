@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afghan Date Converter Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.8;
+    }
+    h1 {
+      color: #333;
+    }
+    .test-section {
+      background: #f5f5f5;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    .test-section h3 {
+      margin-top: 0;
+      color: #0066cc;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .note {
+      background: #fff3cd;
+      padding: 15px;
+      border-left: 4px solid #ffc107;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Afghan Date Converter - Test Page</h1>
+  
+  <div class="note">
+    <strong>Instructions:</strong>
+    <ol>
+      <li>Install the extension in Firefox</li>
+      <li>Open this page</li>
+      <li>Dates below should be converted to Afghan Dari or Pashto</li>
+      <li>Open browser console (F12) to see conversion logs</li>
+    </ol>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 1: ISO Format (YYYY-MM-DD)</h3>
+    <p>Date: 2024-11-09</p>
+    <p>Another date: 2023-05-15</p>
+    <p>Future: 2025-12-31</p>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 2: Slash Format (YYYY/MM/DD)</h3>
+    <p>Date: 2024/11/09</p>
+    <p>Another: 2023/01/01</p>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 3: Day First (DD/MM/YYYY)</h3>
+    <p>Date: 09/11/2024</p>
+    <p>Another: 15/05/2023</p>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 4: English Month Names</h3>
+    <p>Today is November 9, 2024</p>
+    <p>Meeting on December 25, 2024</p>
+    <p>Event: Jan 15, 2025</p>
+    <p>Birthday: 5 March 2023</p>
+    <p>Conference: 20th September 2024</p>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 5: Dates Before 2000 (Should NOT Convert)</h3>
+    <p>Old date: 1999-12-31</p>
+    <p>Very old: January 1, 1990</p>
+    <p>Ancient: 1985/05/20</p>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 6: Mixed Content</h3>
+    <p>The meeting scheduled for 2024-11-09 has been moved to November 15, 2024.</p>
+    <p>Please submit your report by 2025/01/31 at the latest.</p>
+  </div>
+
+  <div class="test-section">
+    <h3>Test 7: Edge Cases</h3>
+    <p>Exactly 2001: 2001-01-01</p>
+    <p>Year 2000 (should NOT convert): 2000-12-31</p>
+    <p>Year 2001 (should convert): 2001-01-01</p>
+  </div>
+
+  <script>
+    console.log('Test page loaded. Extension should convert dates now.');
+    console.log('Current date:', new Date().toISOString());
+  </script>
+</body>
+</html>

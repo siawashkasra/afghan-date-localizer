@@ -1,23 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "Afghan Date Localizer",
-  "description": "Detect dates (Gregorian, Jalali, Hijri) and convert them to Afghan Dari or Pashto Solar Hijri.",
-  "version": "1.0.0",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "options_page": "src/options.html",
-  "action": {
-    "default_title": "Afghan Date Localizer",
-    "default_popup": "src/options.html"
-  },
+  "name": "Afghan Date Converter",
+  "version": "1.0",
+  "description": "Converts dates after year 2000 to Afghan Dari or Pashto Solar Hijri calendar",
   "icons": {
     "48": "icons/icon-48.png"
   },
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/contentScript.js"],
-      "run_at": "document_idle"
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Afghan Date Converter"
+  }
 }

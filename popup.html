@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Afghan Date Converter Settings</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    label {
+      display: block;
+      margin: 15px 0;
+    }
+    select, input {
+      margin-left: 10px;
+    }
+    button {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #0052a3;
+    }
+    .status {
+      color: green;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Afghan Date Converter</h2>
+  
+  <label>
+    Language:
+    <select id="language">
+      <option value="dari">Dari (دری)</option>
+      <option value="pashto">Pashto (پښتو)</option>
+    </select>
+  </label>
+  
+  <label>
+    <input type="checkbox" id="usePersianDigits" checked>
+    Use Persian digits for Dari (۱۲۳)
+  </label>
+  
+  <button id="save">Save Settings</button>
+  <div class="status" id="status">Settings saved! Reload pages to see changes.</div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
