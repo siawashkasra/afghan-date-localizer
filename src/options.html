@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Afghan Date Localizer — Options</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 16px;
+        max-width: 600px;
+      }
+      label {
+        display: block;
+        margin: 8px 0;
+      }
+      button {
+        margin-top: 12px;
+        padding: 8px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Afghan Date Localizer — Options</h2>
+    <label>
+      Language:
+      <select id="lang">
+        <option value="da-AF">Dari (da-AF)</option>
+        <option value="ps-AF">Pashto (ps-AF)</option>
+      </select>
+    </label>
+
+    <label>
+      <input type="checkbox" id="convertTime" checked />
+      Convert &lt;time datetime&gt; elements
+    </label>
+
+    <label>
+      <input type="checkbox" id="usePersianDigits" checked />
+      Use native digits for Dari (۰۱۲۳…)
+    </label>
+
+    <button id="save">Save</button>
+    <span id="status" style="margin-left: 10px"></span>
+
+    <script src="src/options.js"></script>
+  </body>
+</html>
